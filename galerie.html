@@ -42,7 +42,7 @@ img{display:block;max-width:100%}
 .nav a:hover,.nav a:focus-visible{color:#fff}
 .nav a:hover::after,.nav a:focus-visible::after{transform:scaleX(1)}
 .lang{display:flex;align-items:center;gap:8px;font-size:11px;letter-spacing:.14em;color:var(--muted);padding-left:8px;margin-left:6px;border-left:1px solid rgba(167,181,198,.28)}
-.lang b{color:var(--ivory);font-weight:600}.lang span{cursor:pointer;transition:color .3s}.lang span:hover{color:#fff}
+.lang__opt{background:none;border:0;padding:0;margin:0;font:inherit;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);cursor:pointer;transition:color .3s}.lang__opt:hover,.lang__opt:focus-visible{color:#fff}.lang__opt.is-active{color:var(--ivory);font-weight:600;cursor:default}.lang__sep{color:var(--muted);opacity:.55;-webkit-user-select:none;user-select:none}
 .burger{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:8px 4px;position:relative;z-index:60}
 .burger span{display:block;width:26px;height:1.5px;background:var(--ivory);transition:.3s var(--ease)}
 .burger.is-open span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
@@ -379,6 +379,7 @@ body.lb-lock{overflow:hidden}
       </a>
     <nav class="nav" id="nav" aria-label="Navigation principale">
       <a href="prestations.html">Nos prestations</a><a href="galerie.html" aria-current="page">Galerie</a>
+      <div class="lang" role="group" aria-label="Langue / Language"><button type="button" class="lang__opt is-active" data-lang="fr" aria-pressed="true">FR</button><span class="lang__sep" aria-hidden="true">|</span><button type="button" class="lang__opt" data-lang="en" aria-pressed="false">EN</button></div>
     </nav>
     <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav"><span></span><span></span><span></span></button>
   </div>
@@ -510,5 +511,6 @@ body.lb-lock{overflow:hidden}
     else if(e.key==='ArrowLeft')show(cur-1);
   });
 </script>
+<script src="i18n.js" defer></script>
 </body>
 </html>
